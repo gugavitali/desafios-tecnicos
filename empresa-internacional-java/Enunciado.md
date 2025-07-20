@@ -35,7 +35,7 @@ Cada linha pode ou não ter espaços iniciais, utilizados apenas para indentaç�
 **Opcional:** Pontos bônus serão concedidos caso a solução seja capaz de identificar estruturas HTML malformadas, retornando nesse caso a mensagem `"malformed HTML"` (sem as aspas).
 
 # Requisitos Técnicos
-1. A solução deve ser desenvolvida como um programa Java a ser compilado e executado pela linha de comando, utilizando o JDK 17.
+1. A solução deve ser desenvolvida como um programa Java a ser compilado e executado pela linha de comando, utilizando o JDK 17 (Utilizei JDK 21👍).
 2. Não é permitido o uso de quaisquer bibliotecas ou frameworks externos ao JDK. Também não é permitido o uso de packages e classes nativos do JDK relacionados à manipulação de HTML, XML ou DOM (como `javax.xml` ou quaisquer outros).
 3. Para a compilação do programa, deve ser suficiente executar o seguinte comando a partir do diretório que contém o(s) arquivo(s) de código, sem quaisquer alterações:
    ```sh
@@ -43,5 +43,5 @@ Cada linha pode ou não ter espaços iniciais, utilizados apenas para indentaç�
    ```
 4. Para a execução do programa, deve ser suficiente executar o seguinte comando, a partir do diretório onde foi feita a compilação (item anterior), alterando apenas o argumento para a URL a ser analisada:
    ```sh
-   java HtmlAnalyzer inserir-url-aqui
+   java HtmlAnalyzer <inserir-url-aqui>
    ```
