@@ -1,20 +1,29 @@
-class Solution {
-    public int longestConsecutive(int[] nums) {
-        int contador = 0;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-        Set<Integer> setNum = Arrays.stream(nums)
+class Solution {
+    public int longetConsecutive(int[] nums) {
+        Set<Integer> numeros = Arrays.stream(nums)
                 .boxed()
                 .collect(Collectors.toSet());
 
-        for(int num: setNum) {
-            if ( ! (setNum.contains( num - 1 ) ) ) {
+        int maiorSequencia = 0;
+        //percorrer o array
+        for(int numero: numeros){
+            //verificar em O(1) se existe um valor menor e iniciar uma sequencia
+            if ( ! ( numeros.contains(numero - 1) ) ) {
                 int sequencia = 1;
-                while ( setNum.contains( num + sequencia ) ) {
+                //caso sim
+                //verificar em o(1) se existe um valor maior e incrementar +1 na sequencia enquanto existir
+                while(numeros.contains(numero + sequencia)) {
                     sequencia++;
                 }
-                contador = Math.max(contador, sequencia);
+                maiorSequencia = Math.max(maiorSequencia, sequencia);
             }
         }
-        return contador;
+        //retornar maior sequencia
+        return maiorSequencia;
     }
 }
